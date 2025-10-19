@@ -1,3 +1,12 @@
+window.addEventListener("load", () => {
+  const loader = document.getElementById("loader");
+  // wait 2.2 s max, then hide even if animations glitch
+  setTimeout(() => {
+    if (loader) loader.classList.add("hidden");
+  }, 2200);
+});
+
+
 // 🌸 ------------------------------
 // Holistic Design - Main Script
 // -------------------------------
@@ -96,3 +105,4 @@ if (contactForm) {
     contactForm.reset();
   });
 }
+
