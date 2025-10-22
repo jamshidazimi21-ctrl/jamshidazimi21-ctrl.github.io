@@ -245,21 +245,19 @@ body {
    ABOUT SECTION
 --------------------------------- */
 .about {
-  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  background: white;
   padding: 4rem 1rem;
-  background: #ffffff;
+  gap: 2rem;
 }
 
-.about h2 {
-  color: #0077b6;
-  margin-bottom: 1.5rem;
-  font-size: 2rem;
-}
-
-.about p {
-  max-width: 800px;
-  margin: 0 auto;
-  font-size: 1.1rem;
+.about img {
+  width: 350px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
 /* -------------------------------
@@ -472,3 +470,4 @@ footer {
     font-size: 1rem;
   }
 }
+
