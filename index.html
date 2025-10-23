@@ -122,20 +122,25 @@
     </div>
   </section>
 
-  <!-- 🌿 Contact Section -->
+<!-- 🌿 Contact Section -->
 <section id="contact" class="contact-section">
   <h2>Contact Us</h2>
   <p>We’d love to hear from you! Fill out the form below and we’ll get back to you shortly.</p>
-  
+
   <form id="contact-form">
     <input type="text" name="name" placeholder="Your Name" required>
     <input type="email" name="email" placeholder="Your Email" required>
     <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
-    <button type="submit" class="contact-btn">Send Message</button>
+    <button type="submit" class="contact-btn">
+      <span class="btn-text">Send Message</span>
+      <span class="spinner" style="display:none;"></span>
+    </button>
   </form>
 
   <!-- Success message (hidden by default) -->
-  <p id="success-message" class="success-message">🎉 Message Sent! Thank you for reaching out to Holistic Design. We’ll get back to you soon.</p>
+  <p id="success-message" class="success-message">
+    🎉 Message Sent! Thank you for reaching out to Holistic Design. We’ll get back to you soon.
+  </p>
 </section>
 
 
@@ -146,7 +151,9 @@
 
   <!-- 🌿 Back to Top Button -->
   <button id="backToTop" title="Back to Top">↑</button>
+  
 <!-- 🌱 Contact Form Script -->
+
 <script>
 document.getElementById("contact-form").addEventListener("submit", async function(event) {
   event.preventDefault(); // stop form from refreshing the page
@@ -180,13 +187,3 @@ document.getElementById("contact-form").addEventListener("submit", async functio
   <script src="script.js"></script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
