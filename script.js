@@ -90,19 +90,34 @@ if (backToTop) {
 }
 
 // 🌿 Contact Form Handling
-const contactForm = document.getElementById("contact-form");
-if (contactForm) {
-  contactForm.addEventListener("submit", e => {
-    e.preventDefault();
+<script>
+document.getElementById("contact-form").addEventListener("submit", async function(event) {
+  event.preventDefault(); // stop the default page redirect
 
-    const formMessage = document.getElementById("form-message");
-    if (formMessage) {
-      formMessage.textContent = "Your message has been sent successfully!";
-      formMessage.classList.remove("hidden");
-      formMessage.style.color = "#0077b6";
+  const form = event.target;
+  const data = new FormData(form);
+  const successMessage = document.getElementById("success-message");
+
+  try {
+    const response = await fetch("https://formspree.io/f/manplpjo, {
+      method: "POST",
+      body: data,
+      headers: {
+        'Accept': 'application/json'
+      }
+    });
+
+    if (response.ok) {
+      successMessage.style.display = "block";
+      form.reset(); // clear form fields
+    } else {
+      alert("There was a problem sending your message. Please try again later.");
     }
+  } catch (error) {
+    alert("Error: " + error.message);
+  }
+});
+</script>
 
-    contactForm.reset();
-  });
-}
+
 
