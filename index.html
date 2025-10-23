@@ -127,14 +127,21 @@
     <h2>Contact Us</h2>
     <p>We’d love to hear about your next project. Please fill out the form below, and we’ll get in touch soon.</p>
 
-    <form id="contact-form">
-      <input type="text" name="name" placeholder="Your Name" required />
-      <input type="email" name="email" placeholder="Your Email" required />
+    <form id="contactForm" action="https://formspree.io/f//manplpjo" method="POST" class="fade-in delay-1">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
       <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
-      <button type="submit">Send Message</button>
+      <button type="submit" class="btn">Send Message</button>
     </form>
+    <p id="form-status"></p>
 
-    <p id="form-message" class="hidden">Your message has been sent successfully!</p>
+    <!-- SUCCESS POPUP -->
+    <div id="popup" class="popup">
+      <div class="popup-content">
+        <h3>🎉 Message Sent!</h3>
+        <p>Thank you for reaching out to Holistic Design. We’ll get back to you soon.</p>
+      </div>
+    </div>
   </section>
 
   <!-- 🌿 Footer -->
@@ -149,6 +156,7 @@
   <script src="script.js"></script>
 </body>
 </html>
+
 
 
 
