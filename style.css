@@ -353,9 +353,9 @@ body {
    CONTACT SECTION
 --------------------------------- */
 .contact {
+  background: white;
   text-align: center;
   padding: 4rem 1rem;
-  background: #ffffff;
 }
 
 .contact h2 {
@@ -364,40 +364,67 @@ body {
 }
 
 .contact form {
-  max-width: 600px;
-  margin: 0 auto;
   display: flex;
   flex-direction: column;
+  max-width: 400px;
+  margin: auto;
   gap: 1rem;
 }
 
 .contact input,
 .contact textarea {
-  width: 100%;
-  padding: 0.8rem;
+  padding: 12px;
   border: 1px solid #ccc;
   border-radius: 8px;
   font-size: 1rem;
+  width: 100%;
 }
 
 .contact button {
-  background: #0077b6;
-  color: white;
-  padding: 0.8rem 1.5rem;
-  border: none;
-  border-radius: 25px;
   cursor: pointer;
-  font-weight: 600;
-  transition: background 0.3s ease;
 }
 
-.contact button:hover {
-  background: #005f8a;
+/* -------------------------------
+   SUCCESS POPUP
+--------------------------------- */
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+  z-index: 9999;
 }
 
-#form-message {
-  margin-top: 1rem;
-  font-weight: 500;
+.popup.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.popup-content {
+  background: white;
+  padding: 2rem 3rem;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 0.6s ease forwards;
+}
+
+.popup-content h3 {
+  color: #0077b6;
+  margin-bottom: 0.5rem;
+}
+
+@keyframes fadeIn {
+  from { transform: translateY(30px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
 }
 
 /* -------------------------------
@@ -471,6 +498,7 @@ footer {
     font-size: 1rem;
   }
 }
+
 
 
 
