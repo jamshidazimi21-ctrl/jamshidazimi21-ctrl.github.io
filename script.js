@@ -90,34 +90,49 @@ if (backToTop) {
 }
 
 // 🌿 Contact Form Handling
+
+<!-- 🌱 Contact Form Script -->
 <script>
 document.getElementById("contact-form").addEventListener("submit", async function(event) {
-  event.preventDefault(); // stop the default page redirect
+  event.preventDefault(); // stop form from refreshing the page
 
   const form = event.target;
   const data = new FormData(form);
   const successMessage = document.getElementById("success-message");
+  const button = form.querySelector(".contact-btn");
+  const buttonText = button.querySelector(".btn-text");
+  const spinner = button.querySelector(".spinner");
+
+  // 🌿 Show spinner, hide text, and disable button
+  buttonText.style.display = "none";
+  spinner.style.display = "inline-block";
+  button.disabled = true;
 
   try {
-    const response = await fetch("https://formspree.io/f/manplpjo, {
+    const response = await fetch("https://formspree.io/f/manplpjo", {
       method: "POST",
       body: data,
-      headers: {
-        'Accept': 'application/json'
-      }
+      headers: { 'Accept': 'application/json' }
     });
 
     if (response.ok) {
-      successMessage.style.display = "block";
-      form.reset(); // clear form fields
+      form.reset();
+      successMessage.classList.add("show");
+      setTimeout(() => {
+        successMessage.classList.remove("show");
+      }, 6000);
     } else {
-      alert("There was a problem sending your message. Please try again later.");
+      alert("⚠️ There was a problem sending your message. Please try again later.");
     }
   } catch (error) {
-    alert("Error: " + error.message);
+    alert("⚠️ Error: " + error.message);
+  } finally {
+    // 🌸 Hide spinner, show text again, and re-enable button
+    spinner.style.display = "none";
+    buttonText.style.display = "inline";
+    button.disabled = false;
   }
 });
-</script>
-
+  
 
 
