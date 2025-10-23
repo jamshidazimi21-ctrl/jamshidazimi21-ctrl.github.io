@@ -123,26 +123,21 @@
   </section>
 
   <!-- 🌿 Contact Section -->
-  <section id="contact" class="contact fade-in">
-    <h2>Contact Us</h2>
-    <p>We’d love to hear about your next project. Please fill out the form below, and we’ll get in touch soon.</p>
+<section id="contact" class="contact-section">
+  <h2>Contact Us</h2>
+  <p>We’d love to hear from you! Fill out the form below and we’ll get back to you shortly.</p>
+  
+  <form id="contact-form">
+    <input type="text" name="name" placeholder="Your Name" required>
+    <input type="email" name="email" placeholder="Your Email" required>
+    <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+    <button type="submit" class="contact-btn">Send Message</button>
+  </form>
 
-    <form id="contactForm" action="https://formspree.io/f//manplpjo" method="POST" class="fade-in delay-1">
-      <input type="text" name="name" placeholder="Your Name" required>
-      <input type="email" name="email" placeholder="Your Email" required>
-      <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
-      <button type="submit" class="btn">Send Message</button>
-    </form>
-    <p id="form-status"></p>
+  <!-- Success message (hidden by default) -->
+  <p id="success-message" class="success-message">🎉 Message Sent! Thank you for reaching out to Holistic Design. We’ll get back to you soon.</p>
+</section>
 
-    <!-- SUCCESS POPUP -->
-    <div id="popup" class="popup">
-      <div class="popup-content">
-        <h3>🎉 Message Sent!</h3>
-        <p>Thank you for reaching out to Holistic Design. We’ll get back to you soon.</p>
-      </div>
-    </div>
-  </section>
 
   <!-- 🌿 Footer -->
   <footer>
@@ -156,6 +151,7 @@
   <script src="script.js"></script>
 </body>
 </html>
+
 
 
 
