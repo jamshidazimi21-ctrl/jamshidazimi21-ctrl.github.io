@@ -108,12 +108,16 @@ document.getElementById("contact-form").addEventListener("submit", async functio
 
     if (response.ok) {
       form.reset();
+     // 1. Show the message (CSS sets opacity: 1 and visibility: visible)
       successMessage.classList.add("show");
+      
+      // 2. Set a timeout to remove the 'show' class after 4 seconds
       setTimeout(() => {
-        successMessage.classList.remove("show");
-      }, 6000); // Success message hides after 6 seconds [cite: 13]
+        successMessage.classList.remove("show"); 
+      }, 4000); // <-- Message visible for 4 seconds
+      
     } else {
-      alert("⚠️ There was a problem sending your message. Please try again later."); // Alert if response is not ok [cite: 14]
+      alert("⚠️ There was a problem sending your message. Please try again later."); 
     }
   } catch (error) {
     alert("⚠️ Error: " + error.message); // Alert for network or fetch errors [cite: 15]
@@ -124,3 +128,4 @@ document.getElementById("contact-form").addEventListener("submit", async functio
     button.disabled = false; // Re-enable button [cite: 16]
   }
 });
+
