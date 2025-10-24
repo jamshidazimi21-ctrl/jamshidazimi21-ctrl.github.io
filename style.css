@@ -196,7 +196,7 @@ body {
 --------------------------------- */
 .hero {
   /* FIX: Added './' to the image path to ensure it loads correctly from the 'images' folder on GitHub Pages. */
-  background: url("./images/hero.jpg") center/cover no-repeat fixed;
+  background: url("./images/hero.jpg?v=2") center/cover no-repeat fixed;
   height: 100vh;
   position: relative;
   margin-top: 80px;
@@ -536,6 +536,7 @@ footer {
     font-size: 1rem;
   }
 }
+
 
 
 
