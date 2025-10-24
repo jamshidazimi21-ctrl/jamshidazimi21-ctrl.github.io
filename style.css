@@ -73,17 +73,20 @@ body {
 
 /* Animations for loader */
 @keyframes logoFadeIn {
-  from { opacity: 0; transform: scale(0.9) translateY(20px); }
+  from { opacity: 0; transform: scale(0.9) translateY(20px);
+  }
   to { opacity: 1; transform: scale(1) translateY(0); }
 }
 
 @keyframes textFadeIn {
-  from { opacity: 0; transform: translateY(15px); }
+  from { opacity: 0; transform: translateY(15px);
+  }
   to { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes pulse {
-  0%, 100% { transform: scale(1); opacity: 1; }
+  0%, 100% { transform: scale(1); opacity: 1;
+  }
   50% { transform: scale(1.05); opacity: 0.85; }
 }
 
@@ -192,7 +195,8 @@ body {
    HERO SECTION
 --------------------------------- */
 .hero {
-  background: url("images/hero.jpg") center/cover no-repeat fixed;
+  /* FIX: Added './' to the image path to ensure it loads correctly from the 'images' folder on GitHub Pages. */
+  background: url("./images/hero.jpg") center/cover no-repeat fixed;
   height: 100vh;
   position: relative;
   margin-top: 80px;
@@ -345,7 +349,8 @@ body {
 }
 
 @keyframes fadeInDown {
-  0% { opacity: 0; transform: translateY(-20px); }
+  0% { opacity: 0; transform: translateY(-20px);
+  }
   100% { opacity: 1; transform: translateY(0); }
 }
 /* 🌱 Contact Section Styles */
@@ -423,7 +428,8 @@ body {
 
 @keyframes spin {
   from { transform: translate(-50%, -50%) rotate(0deg); }
-  to { transform: translate(-50%, -50%) rotate(360deg); }
+  to { transform: translate(-50%, -50%) rotate(360deg);
+  }
 }
 
 /* Success Message */
@@ -512,10 +518,3 @@ footer {
     font-size: 1rem;
   }
 }
-
-
-
-
-
-
-
