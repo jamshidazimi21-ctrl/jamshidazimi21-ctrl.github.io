@@ -537,6 +537,69 @@ footer {
   }
 }
 
+/* --- NEW PROFESSIONAL TWEAKS --- */
+
+/* 1. Active Navigation Link State */
+.nav-links a.active {
+  color: #0077b6; /* Your primary color */
+  font-weight: 600;
+}
+.nav-links a.active::after {
+  width: 100%;
+}
+
+/* 2. Tagline Styling */
+.tagline {
+  font-size: 1rem;
+  font-weight: 300;
+  color: #777; /* Soft gray */
+  margin-bottom: 0.5rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* 3. Consistent Max-Width for Sections */
+.about, .services, .contact-section {
+    max-width: 1200px; /* Match navbar container width */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* 4. Footer Navigation Styling */
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.copyright {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.footer-nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.footer-nav a:hover {
+    color: #ffd700; /* Subtle gold hover for contrast */
+}
+
+/* --- Responsive adjustment for footer --- */
+@media (min-width: 769px) {
+    .footer-content {
+        flex-direction: row;
+        justify-content: space-between;
+        max-width: 1200px;
+        padding: 0 20px;
+        margin: auto;
+    }
+}
 
 
 
