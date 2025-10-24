@@ -434,17 +434,35 @@ body {
 
 /* Success Message */
 .success-message {
-  display: none;
+  /* --- NEW STYLES for Floating/Fixed Position --- */
+  position: fixed; /* Makes it float relative to the viewport */
+  bottom: 30px; /* Positions it 30px from the bottom */
+  left: 50%; /* Centers it horizontally */
+  transform: translateX(-50%);
+  z-index: 1050; /* Ensures it is above everything else */
+  
+  /* --- STYLING --- */
+  background: #e6f7ee; /* Light green background */
+  border: 1px solid #1c7c54;
+  padding: 12px 25px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  white-space: nowrap; /* Keeps the text on one line */
+
+  /* --- ANIMATION CONTROLS --- */
   color: #1c7c54;
-  margin-top: 20px;
   font-weight: 600;
+  
+  /* Start hidden */
   opacity: 0;
-  transition: opacity 0.6s ease-in-out;
+  visibility: hidden;
+  transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out, bottom 0.4s ease;
 }
 
 .success-message.show {
-  display: block;
   opacity: 1;
+  visibility: visible;
+  bottom: 40px; /* Moves it up slightly for a 'pop-up' effect */
 }
 
 /* -------------------------------
@@ -518,5 +536,6 @@ footer {
     font-size: 1rem;
   }
 }
+
 
 
