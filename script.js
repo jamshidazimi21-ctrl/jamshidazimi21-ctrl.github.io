@@ -74,6 +74,37 @@ if (backToTop) {
       backToTop.style.display = "none";
     }
   });
+  // 🌿 Active Navigation Link on Scroll
+const sections = document.querySelectorAll("section");
+const navLinks = document.querySelectorAll(".nav-links a");
+
+function handleScrollActiveNav() {
+  let current = "";
+
+  // Loop through sections to find which one is currently in view
+  sections.forEach((section) => {
+    const sectionTop = section.offsetTop;
+    // Set a window buffer so the link changes slightly before the section hits the top
+    const sectionHeight = section.clientHeight;
+    
+    // Check if the current scroll position is past the top of the section
+    if (pageYOffset >= sectionTop - sectionHeight / 3) {
+      current = section.getAttribute("id");
+    }
+  });
+
+  // Apply the 'active' class to the corresponding navigation link
+  navLinks.forEach((link) => {
+    link.classList.remove("active");
+    if (link.getAttribute("href").includes(current)) {
+      link.classList.add("active");
+    }
+  });
+}
+
+// Attach the function to scroll and load events
+window.addEventListener("scroll", handleScrollActiveNav);
+window.addEventListener("load", handleScrollActiveNav);
 
   backToTop.addEventListener("click", () => {
     window.scrollTo({
@@ -128,4 +159,5 @@ document.getElementById("contact-form").addEventListener("submit", async functio
     button.disabled = false; // Re-enable button [cite: 16]
   }
 });
+
 
